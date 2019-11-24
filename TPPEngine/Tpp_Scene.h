@@ -9,12 +9,12 @@
 namespace tp {
 
 	class Scene {
+	static int gridSize;
 	private:
 		std::vector<GameObject*> gameObjects;
 		std::map<Vector2i, GameObject*> gameObjectsGrid;
 		std::vector<Controller*> controllers;
 		std::map<std::string, std::vector<Entity*>> entities;
-		int gridSize;
 	public:
 		Scene(std::vector<Controller*> controllers);
 
