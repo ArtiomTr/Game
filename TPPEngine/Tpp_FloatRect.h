@@ -6,14 +6,12 @@
 namespace tp {
 	class FloatRect : Rect {
 	private:
-
 		float width;
 		float height;
 		Vector2f position;
 		Vector2f pivot;
 
 	public:
-
 		FloatRect(float width, float height);
 
 		void setWidth(float newValue);
@@ -23,6 +21,5 @@ namespace tp {
 		float getWidth();
 
 		float getHeight();
-
 	};
 }

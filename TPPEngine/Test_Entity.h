@@ -1,17 +1,15 @@
 #pragma once
 
-#include "Tpp_Entity.h"
-#include "Tpp_Controller.h"
+#include "Tpp_EntityController.h"
 
 class Test_Entity : public tp::Entity {
 public:
 	int rotSpeed;
 	int currentRotation;
 	Test_Entity(int rotSpeed);
-
 };
 
-class Test_Controller : public tp::Controller {
+class Test_Controller : public tp::EntityController<Test_Entity> {
 public:
 	Test_Controller();
 
@@ -20,5 +18,4 @@ public:
 	void onUpdate(std::vector<tp::Entity*> entities);
 
 	void onDeepUpdate(std::vector<tp::Entity*> entities);
-
 };

@@ -22,33 +22,33 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{65031B6A-61AF-4EB5-AAB7-F5CAAC68580F}</ProjectGuid>
     <RootNamespace>TPPEngine</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>Game</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -127,7 +127,8 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Test_Entity.cpp" />
-    <ClCompile Include="Tpp_Controller.cpp" />
+    <ClCompile Include="Tpp_Camera.cpp" />
+    <ClCompile Include="Tpp_EntityController.cpp" />
     <ClCompile Include="Tpp_Entity.cpp" />
     <ClCompile Include="Tpp_FloatRect.cpp" />
     <ClCompile Include="Tpp_Game.cpp" />
@@ -138,14 +139,13 @@
     <ClCompile Include="Tpp_Rect.cpp" />
     <ClCompile Include="Tpp_Scene.cpp" />
     <ClCompile Include="Tpp_Transform.cpp" />
+    <ClCompile Include="Tpp_Utils.cpp" />
     <ClCompile Include="Tpp_Vector2.cpp" />
-    <ClCompile Include="Tpp_Vector2f.cpp" />
-    <ClCompile Include="Tpp_Vector2i.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test_Entity.h" />
-    <ClInclude Include="Tpp_Controller.h" />
-    <ClInclude Include="Tpp_Entity.h" />
+    <ClInclude Include="Tpp_Camera.h" />
+    <ClInclude Include="Tpp_EntityController.h" />
     <ClInclude Include="Tpp_FloatRect.h" />
     <ClInclude Include="Tpp_Game.h" />
     <ClInclude Include="Tpp_GameObject.h" />
@@ -153,11 +153,16 @@
     <ClInclude Include="Tpp_Math.h" />
     <ClInclude Include="Tpp_Quaternion.h" />
     <ClInclude Include="Tpp_Rect.h" />
+    <ClInclude Include="Tpp_Renderer.h" />
     <ClInclude Include="Tpp_Scene.h" />
     <ClInclude Include="Tpp_Transform.h" />
+    <ClInclude Include="Tpp_Utils.h" />
     <ClInclude Include="Tpp_Vector2.h" />
     <ClInclude Include="Tpp_Vector2f.h" />
     <ClInclude Include="Tpp_Vector2i.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".clang-format" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

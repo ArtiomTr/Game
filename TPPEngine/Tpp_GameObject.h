@@ -1,8 +1,9 @@
 #pragma once
 
-#include "Tpp_Transform.h"
-#include <vector>
 #include <string>
+#include <vector>
+
+#include "Tpp_Transform.h"
 
 namespace tp {
 
@@ -15,6 +16,7 @@ namespace tp {
 		std::string name;
 		bool active;
 		int id;
+
 	public:
 		GameObject(Transform transform, std::string name);
 		void addNewEntity(int entity);

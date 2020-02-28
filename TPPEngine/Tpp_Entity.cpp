@@ -2,12 +2,11 @@
 
 namespace tp {
 
-	std::string Entity::getName() {
-		return name;
-	}
+	std::string Entity::getName() { return name; }
 
-	Entity::Entity(std::string name) : name(name) {
+	Entity::Entity(std::string name)
+		: name(name){
 
-	};
+		  };
 
 }
