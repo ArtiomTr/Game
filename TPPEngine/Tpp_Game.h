@@ -4,8 +4,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "Tpp_IntRect.h"
-#include "Tpp_Math.h"
+#include "Tpp_Rect.h"
 #include "Tpp_Scene.h"
 
 namespace tp {
@@ -13,14 +12,14 @@ namespace tp {
 	struct GameConfiguration {
 
 	private:
-		IntRect windowSize;
+		Rect<int> windowSize;
 		std::string gameTitle;
 
 	public:
-		GameConfiguration(IntRect size, std::string name);
+		GameConfiguration(Rect<int> size, std::string name);
 		GameConfiguration();
 
-		IntRect getWindowSize();
+		Rect<int> getWindowSize();
 		std::string getGameTitle();
 	};
 

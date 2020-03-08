@@ -2,6 +2,7 @@
 
 namespace tp {
 
-	Quaternion::Quaternion() {}
+	Quaternion::Quaternion() {
+	}
 
 }

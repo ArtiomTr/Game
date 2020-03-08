@@ -1,10 +1,8 @@
 #include "Tpp_Scene.h"
 
-#include <iostream>
-
 namespace tp {
 
-	Scene::Scene(std::vector<Controller*> c) {
+	Scene::Scene(std::vector<IEntityController*> c) {
 		for (int i = 0; i < c.size(); i++)
 			controllers.push_back(c[i]);
 	}
@@ -37,8 +35,7 @@ namespace tp {
 	void Scene::ECS_update() {
 		for (int i = 0; i < controllers.size(); i++) {
 			if (entities.find(controllers[i]->getName()) != entities.end())
-				controllers[i]->onDeepUpdate(
-					entities[controllers[i]->getName()]);
+				controllers[i]->deepUpdate(entities[controllers[i]->getName()]);
 		}
 	}
 

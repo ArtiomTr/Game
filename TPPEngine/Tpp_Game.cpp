@@ -1,11 +1,5 @@
 #include "Tpp_Game.h"
 
-#include <iostream>
-
-#include <SFML/Graphics.hpp>
-
-#include "Tpp_Math.h"
-
 namespace tp {
 
 	Game::Game(tp::GameConfiguration _configuration) {
@@ -15,7 +9,9 @@ namespace tp {
 					  configuration.getGameTitle());
 	}
 
-	Scene* Game::getScene() { return currentScene; }
+	Scene* Game::getScene() {
+		return currentScene;
+	}
 
 	void Game::Invoke() {
 
@@ -31,17 +27,25 @@ namespace tp {
 		}
 	}
 
-	void Game::openScene(Scene* scene) { currentScene = scene; }
+	void Game::openScene(Scene* scene) {
+		currentScene = scene;
+	}
 
 	GameConfiguration::GameConfiguration()
-		: windowSize(IntRect(0, 0)), gameTitle("") {}
+		: windowSize(Rect<int>(0, 0)), gameTitle("") {
+	}
 
-	GameConfiguration::GameConfiguration(IntRect windowSize,
+	GameConfiguration::GameConfiguration(Rect<int> windowSize,
 										 std::string gameTitle)
-		: windowSize(windowSize), gameTitle(gameTitle) {}
+		: windowSize(windowSize), gameTitle(gameTitle) {
+	}
 
-	IntRect GameConfiguration::getWindowSize() { return windowSize; }
+	Rect<int> GameConfiguration::getWindowSize() {
+		return windowSize;
+	}
 
-	std::string GameConfiguration::getGameTitle() { return gameTitle; }
+	std::string GameConfiguration::getGameTitle() {
+		return gameTitle;
+	}
 
 };

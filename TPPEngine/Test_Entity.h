@@ -2,20 +2,22 @@
 
 #include "Tpp_EntityController.h"
 
-class Test_Entity : public tp::Entity {
+using namespace tp;
+
+class Test_Entity : public Entity {
 public:
 	int rotSpeed;
 	int currentRotation;
 	Test_Entity(int rotSpeed);
 };
 
-class Test_Controller : public tp::EntityController<Test_Entity> {
+class Test_Controller : public EntityController<Test_Entity> {
 public:
 	Test_Controller();
 
-	void start(std::vector<tp::Entity*> entities);
+	void start(std::vector<Entity*> entities) override;
 
-	void onUpdate(std::vector<tp::Entity*> entities);
+	void surfaceUpdate(std::vector<Entity*> entities) override;
 
-	void onDeepUpdate(std::vector<tp::Entity*> entities);
+	void deepUpdate(std::vector<Entity*> entities) override;
 };

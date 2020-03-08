@@ -1,11 +1,11 @@
 #pragma once
 
-#include "Tpp_Entity.h"
+#include "Tpp_EntityController.h"
 
 namespace tp {
 
 	class Camera : public Entity {};
 
-	class CameraController
+	class CameraController : public EntityController<Camera> {};
 
 }

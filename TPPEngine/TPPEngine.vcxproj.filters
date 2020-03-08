@@ -15,22 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tpp_Math.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Tpp_Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Tpp_Rect.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tpp_FloatRect.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tpp_IntRect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Tpp_Scene.cpp">
@@ -48,9 +36,6 @@
     <ClCompile Include="Tpp_Vector2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tpp_Entity.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Test_Entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -65,25 +50,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Tpp_Math.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Tpp_Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Tpp_Vector2i.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Tpp_Rect.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tpp_FloatRect.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tpp_Vector2f.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tpp_IntRect.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tpp_Scene.h">

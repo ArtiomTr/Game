@@ -9,7 +9,7 @@
 AccessModifierOffset: -4
 AlignAfterOpenBracket: Align
 AllowShortBlocksOnASingleLine: true
-AllowShortFunctionsOnASingleLine: All
+AllowShortFunctionsOnASingleLine: false
 AllowAllConstructorInitializersOnNextLine: true
 BasedOnStyle: LLVM
 BraceWrapping:

@@ -15,7 +15,7 @@ namespace tp {
 
 		void repaint(sf::RenderWindow& window);
 
-		void add_object(int id, sf::Drawable drawable);
+		// void add_object(int id, sf::Drawable drawable);
 	};
 
 }
