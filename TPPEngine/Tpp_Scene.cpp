@@ -1,9 +1,8 @@
 #include "Tpp_Scene.h"
-#include <iostream>
 
 namespace tp {
 
-	Scene::Scene(std::vector<Controller*> c) {
+	Scene::Scene(std::vector<IEntityController*> c) {
 		for (int i = 0; i < c.size(); i++)
 			controllers.push_back(c[i]);
 	}
@@ -15,7 +14,8 @@ namespace tp {
 		return -1;
 	}
 
-	void Scene::addGameObject(std::vector<Entity*> ents, GameObject* newGameObject) {
+	void Scene::addGameObject(std::vector<Entity*> ents,
+							  GameObject* newGameObject) {
 		for (int i = 0; i < ents.size(); i++) {
 			ents[i]->gameObject = newGameObject;
 			if (entities.find(ents[i]->getName()) != entities.end()) {
@@ -23,17 +23,19 @@ namespace tp {
 			} else {
 				std::vector<Entity*> newEntityVector;
 				newEntityVector.push_back(ents[i]);
-				entities.insert(std::make_pair(ents[i]->getName(), newEntityVector));
+				entities.insert(
+					std::make_pair(ents[i]->getName(), newEntityVector));
 			}
-			newGameObject->addNewEntity(entities[ents[i]->getName()].size() - 1);
+			newGameObject->addNewEntity(entities[ents[i]->getName()].size() -
+										1);
 		}
 		gameObjects.push_back(newGameObject);
 	}
 
 	void Scene::ECS_update() {
 		for (int i = 0; i < controllers.size(); i++) {
-			if(entities.find(controllers[i]->getName()) != entities.end())
-				controllers[i]->onDeepUpdate(entities[controllers[i]->getName()]);
+			if (entities.find(controllers[i]->getName()) != entities.end())
+				controllers[i]->deepUpdate(entities[controllers[i]->getName()]);
 		}
 	}
 

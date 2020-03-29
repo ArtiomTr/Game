@@ -1,20 +1,12 @@
 #include "Tpp_Game.h"
-#include "Tpp_Math.h"
-#include <iostream>
-
-#include <SFML/Graphics.hpp>
 
 namespace tp {
 
 	Game::Game(tp::GameConfiguration _configuration) {
 		configuration = _configuration;
-		window.create(
-			sf::VideoMode(
-				configuration.getWindowSize().getWidth(),
-				configuration.getWindowSize().getHeight()
-			),
-			configuration.getGameTitle()
-		);
+		window.create(sf::VideoMode(configuration.getWindowSize().getWidth(),
+									configuration.getWindowSize().getHeight()),
+					  configuration.getGameTitle());
 	}
 
 	Scene* Game::getScene() {
@@ -33,22 +25,22 @@ namespace tp {
 				currentScene->ECS_update();
 			}
 		}
-
 	}
 
 	void Game::openScene(Scene* scene) {
 		currentScene = scene;
 	}
 
-	GameConfiguration::GameConfiguration() : windowSize(IntRect(0, 0)), gameTitle("") {
-
+	GameConfiguration::GameConfiguration()
+		: windowSize(Rect<int>(0, 0)), gameTitle("") {
 	}
 
-	GameConfiguration::GameConfiguration(IntRect windowSize, std::string gameTitle) : windowSize(windowSize), gameTitle(gameTitle) {
-
+	GameConfiguration::GameConfiguration(Rect<int> windowSize,
+										 std::string gameTitle)
+		: windowSize(windowSize), gameTitle(gameTitle) {
 	}
 
-	IntRect GameConfiguration::getWindowSize() {
+	Rect<int> GameConfiguration::getWindowSize() {
 		return windowSize;
 	}
 

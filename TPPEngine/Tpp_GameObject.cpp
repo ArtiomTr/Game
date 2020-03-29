@@ -10,14 +10,9 @@ namespace tp {
 		entities.push_back(entity);
 	}
 
-	GameObject::GameObject(Transform transform, std::string name) : 
-		transform(transform),
-		name(name),
-		active(true),
-		entities(),
-		id(GameObject::ID_COUNTER++)
-	{
-
+	GameObject::GameObject(Transform transform, std::string name)
+		: transform(transform), name(name), active(true), entities(),
+		  id(GameObject::ID_COUNTER++) {
 	}
 
 	bool GameObject::isActive() {

@@ -3,7 +3,6 @@
 namespace tp {
 
 	Quaternion::Quaternion() {
-
 	}
 
 }
