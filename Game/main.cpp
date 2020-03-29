@@ -27,6 +27,8 @@ int main() {
 			Vector2<float>(1, 1)),
 			"New object 2"));
 
+	cout << "asdf" << endl;
+
 	g.openScene(&s);
 
 	g.Invoke();
