@@ -2,42 +2,46 @@
 
 namespace tp {
 
-	Game::Game(tp::GameConfiguration _configuration) {
-		configuration = _configuration;
+	Game::Game(GameConfiguration _configuration)
+		: configuration(_configuration), sceneManager(new SceneManager()) {
 		window.create(sf::VideoMode(configuration.getWindowSize().getWidth(),
 									configuration.getWindowSize().getHeight()),
 					  configuration.getGameTitle());
 	}
 
-	Scene* Game::getScene() {
-		return currentScene;
+	SceneManager* Game::getSceneManager() {
+		return sceneManager;
 	}
 
 	void Game::Invoke() {
-
 		while (window.isOpen()) {
 			while (window.pollEvent(event)) {
 				if (event.type == sf::Event::Closed) {
 					window.close();
 				}
 			}
-			if (currentScene != NULL) {
-				currentScene->ECS_update();
+			if (sceneManager->currentScene != NULL) {
+				sceneManager->currentScene->ECS_update();
 			}
+			window.display();
 		}
 	}
 
-	void Game::openScene(Scene* scene) {
-		currentScene = scene;
+	GameConfiguration Game::getConfiguration() {
+		return configuration;
 	}
 
-	GameConfiguration::GameConfiguration()
-		: windowSize(Rect<int>(0, 0)), gameTitle("") {
+	sf::RenderWindow* Game::getRenderWindow() {
+		return std::addressof(window);
+	}
+
+	bool GameConfiguration::isDebug() {
+		return debugMode;
 	}
 
 	GameConfiguration::GameConfiguration(Rect<int> windowSize,
-										 std::string gameTitle)
-		: windowSize(windowSize), gameTitle(gameTitle) {
+										 std::string gameTitle, bool debugMode)
+		: windowSize(windowSize), gameTitle(gameTitle), debugMode(debugMode) {
 	}
 
 	Rect<int> GameConfiguration::getWindowSize() {

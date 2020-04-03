@@ -12,6 +12,8 @@ namespace tp {
 
 	enum ControllerType { DEEP, SURFACE };
 
+	class Scene;
+
 	class Entity {
 	public:
 		GameObject* gameObject;
@@ -20,11 +22,17 @@ namespace tp {
 		std::string name;
 
 	public:
-		Entity(std::string name);
-		std::string getName();
+		Entity(std::string name) : name(name){};
+
+		std::string getName() {
+			return name;
+		}
 	};
 
 	class IEntityController {
+	protected:
+		Scene* scene;
+
 	public:
 		virtual void start(std::vector<Entity*> entities) = 0;
 
@@ -35,6 +43,10 @@ namespace tp {
 		virtual std::string getName() = 0;
 
 		virtual ControllerType getType() = 0;
+
+		void setScenePointer(Scene* _scene) {
+			scene = _scene;
+		}
 	};
 
 	template <class T> class EntityController : public IEntityController {

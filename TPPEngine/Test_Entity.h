@@ -6,9 +6,8 @@ using namespace tp;
 
 class Test_Entity : public Entity {
 public:
-	int rotSpeed;
-	int currentRotation;
-	Test_Entity(int rotSpeed);
+	float rotSpeed;
+	Test_Entity(float rotSpeed);
 };
 
 class Test_Controller : public EntityController<Test_Entity> {

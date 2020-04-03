@@ -2,7 +2,10 @@
 
 namespace tp {
 
-	Quaternion::Quaternion() {
+	Quaternion::Quaternion() : y(0) {
+	}
+
+	Quaternion::Quaternion(float rotation) : y(rotation) {
 	}
 
 }

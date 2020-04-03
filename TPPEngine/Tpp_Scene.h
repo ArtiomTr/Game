@@ -9,12 +9,8 @@
 namespace tp {
 
 	class Scene {
-		static int gridSize;
-
 	private:
 		std::vector<GameObject*> gameObjects;
-		std::map<Vector2<int>, std::vector<GameObject*>> gameObjectsGrid;
-		std::map<int, std::vector<Vector2<int>>> gameObjectPositions;
 		std::vector<IEntityController*> controllers;
 		std::map<std::string, std::vector<Entity*>> entities;
 
@@ -27,6 +23,8 @@ namespace tp {
 						   GameObject* newGameObject);
 
 		int getEntityCount(std::string name);
+
+		std::vector<Entity*> getEntitiesByName(std::string name);
 	};
 
 }

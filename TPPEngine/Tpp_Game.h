@@ -6,6 +6,7 @@
 
 #include "Tpp_Rect.h"
 #include "Tpp_Scene.h"
+#include "Tpp_SceneManager.h"
 
 namespace tp {
 
@@ -14,13 +15,14 @@ namespace tp {
 	private:
 		Rect<int> windowSize;
 		std::string gameTitle;
+		bool debugMode;
 
 	public:
-		GameConfiguration(Rect<int> size, std::string name);
-		GameConfiguration();
+		GameConfiguration(Rect<int> size, std::string name, bool debugMode);
 
 		Rect<int> getWindowSize();
 		std::string getGameTitle();
+		bool isDebug();
 	};
 
 	class Game {
@@ -28,16 +30,20 @@ namespace tp {
 		GameConfiguration configuration;
 		sf::RenderWindow window;
 		sf::Event event;
-		Scene* currentScene;
+		SceneManager* sceneManager;
 
 	public:
 		Game(GameConfiguration _configuration);
 
 		void Invoke();
 
-		void openScene(Scene* scene);
+		sf::RenderWindow* getRenderWindow();
 
 		Scene* getScene();
+
+		GameConfiguration getConfiguration();
+
+		SceneManager* getSceneManager();
 	};
 
 }

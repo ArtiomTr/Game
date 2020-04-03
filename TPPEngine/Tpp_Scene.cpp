@@ -3,8 +3,10 @@
 namespace tp {
 
 	Scene::Scene(std::vector<IEntityController*> c) {
-		for (int i = 0; i < c.size(); i++)
+		for (int i = 0; i < c.size(); i++) {
+			c[i]->setScenePointer(this);
 			controllers.push_back(c[i]);
+		}
 	}
 
 	int Scene::getEntityCount(std::string name) {
@@ -12,6 +14,10 @@ namespace tp {
 			return entities[name].size();
 		}
 		return -1;
+	}
+
+	std::vector<Entity*> Scene::getEntitiesByName(std::string name) {
+		return entities[name];
 	}
 
 	void Scene::addGameObject(std::vector<Entity*> ents,
@@ -34,8 +40,9 @@ namespace tp {
 
 	void Scene::ECS_update() {
 		for (int i = 0; i < controllers.size(); i++) {
-			if (entities.find(controllers[i]->getName()) != entities.end())
+			if (entities.find(controllers[i]->getName()) != entities.end()) {
 				controllers[i]->deepUpdate(entities[controllers[i]->getName()]);
+			}
 		}
 	}
 

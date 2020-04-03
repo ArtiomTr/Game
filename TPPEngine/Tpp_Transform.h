@@ -6,12 +6,10 @@
 namespace tp {
 
 	class Transform {
-	private:
+	public:
 		Quaternion rotation;
 		Vector2<float> position;
 		Vector2<float> scale;
-
-	public:
 		Transform(Vector2<float> position, Quaternion rotation,
 				  Vector2<float> scale);
 	};

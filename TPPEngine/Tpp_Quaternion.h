@@ -3,11 +3,10 @@
 namespace tp {
 
 	class Quaternion {
-	private:
-		float y;
-
 	public:
+		float y;
 		Quaternion();
+		Quaternion(float rotation);
 	};
 
 }

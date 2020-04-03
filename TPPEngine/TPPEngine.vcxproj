@@ -128,19 +128,22 @@
   <ItemGroup>
     <ClCompile Include="Test_Entity.cpp" />
     <ClCompile Include="Tpp_Camera.cpp" />
-    <ClCompile Include="Tpp_EntityController.cpp" />
+    <ClCompile Include="Tpp_Debuggable.cpp" />
     <ClCompile Include="Tpp_Game.cpp" />
     <ClCompile Include="Tpp_GameObject.cpp" />
     <ClCompile Include="Tpp_Quaternion.cpp" />
     <ClCompile Include="Tpp_Rect.cpp" />
     <ClCompile Include="Tpp_Scene.cpp" />
+    <ClCompile Include="Tpp_SceneManager.cpp" />
     <ClCompile Include="Tpp_Transform.cpp" />
     <ClCompile Include="Tpp_Utils.cpp" />
     <ClCompile Include="Tpp_Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Collider.h" />
     <ClInclude Include="Test_Entity.h" />
     <ClInclude Include="Tpp_Camera.h" />
+    <ClInclude Include="Tpp_Debuggable.h" />
     <ClInclude Include="Tpp_EntityController.h" />
     <ClInclude Include="Tpp_Game.h" />
     <ClInclude Include="Tpp_GameObject.h" />
@@ -148,6 +151,7 @@
     <ClInclude Include="Tpp_Rect.h" />
     <ClInclude Include="Tpp_Renderer.h" />
     <ClInclude Include="Tpp_Scene.h" />
+    <ClInclude Include="Tpp_SceneManager.h" />
     <ClInclude Include="Tpp_Transform.h" />
     <ClInclude Include="Tpp_Utils.h" />
     <ClInclude Include="Tpp_Vector2.h" />

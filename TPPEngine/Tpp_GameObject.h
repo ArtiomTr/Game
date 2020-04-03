@@ -11,13 +11,13 @@ namespace tp {
 	private:
 		static int ID_COUNTER;
 
-		Transform transform;
 		std::vector<int> entities;
 		std::string name;
 		bool active;
 		int id;
 
 	public:
+		Transform transform;
 		GameObject(Transform transform, std::string name);
 		void addNewEntity(int entity);
 		std::string getName();
